@@ -1,0 +1,2876 @@
+:root{
+  --bg:#0b0f1a;
+  --surface:rgba(16,24,42,.72);
+  --surface-strong:rgba(16,24,42,.90);
+  --text:#e9eef9;
+  --muted:#b9c2db;
+  --line:rgba(233,238,249,.14);
+  --accent:#6ee7ff;
+  --accent2:#a78bfa;
+
+  --max:1160px;
+  --radius:18px;
+  --shadow: 0 18px 55px rgba(0,0,0,.42);
+  --shadow-soft: 0 10px 28px rgba(0,0,0,.28);
+
+  --space-1:8px;
+  --space-2:12px;
+  --space-3:16px;
+  --space-4:22px;
+  --space-5:32px;
+  --space-6:44px;
+  --space-7:64px;
+}
+
+*{box-sizing:border-box}
+html,body{
+  font-size: 20px;
+  height:100%
+}
+
+body{
+  font-size: 20px;
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 520px at 20% -10%, rgba(110,231,255,.16), transparent 60%),
+    radial-gradient(900px 520px at 90% 0%, rgba(167,139,250,.14), transparent 60%),
+    radial-gradient(700px 500px at 50% 120%, rgba(110,231,255,.10), transparent 60%),
+    var(--bg);
+  line-height: 1.6;
+}
+
+a{color:inherit; text-decoration:none}
+a:hover{opacity:.94}
+
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 22px;
+}
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:none;
+  background: var(--bg);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:16px 0;
+}
+
+.brand{
+  font-weight:750;
+  letter-spacing:.2px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width: 190px;
+}
+
+.brand .dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 0 4px rgba(110,231,255,.10);
+}
+
+.navlinks{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.navlinks a{
+  padding:9px 12px;
+  border-radius:12px;
+  color:var(--muted);
+  border:1px solid transparent;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.navlinks a:hover{
+  background: var(--bg);
+  border-color: var(--line);
+}
+
+.navlinks a.active{
+  color:var(--text);
+  background: var(--bg);
+  border-color: var(--line);
+}
+
+.nav-toggle{
+  display:none;
+  border:1px solid var(--line);
+  background: var(--bg);
+  border-radius:14px;
+  padding:10px 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+.nav-toggle-bar{
+  display:block;
+  width:20px;
+  height:2px;
+  background: var(--text);
+  border-radius:999px;
+  margin:4px 0;
+  opacity:.92;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px 15px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background: var(--bg);
+  box-shadow: var(--shadow-soft);
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+
+.btn:hover{transform: translateY(-1px)}
+.btn:active{transform: translateY(0)}
+
+.btn.primary{
+  border:none;
+  background: linear-gradient(135deg, rgba(110,231,255,.96), rgba(167,139,250,.96));
+  color:#06101a;
+  font-weight:800;
+}
+
+.hero{
+  padding: var(--space-7) 0 var(--space-5);
+}
+
+.hero-tight{
+  padding: var(--space-6) 0 var(--space-4);
+}
+
+.kicker{
+  color:var(--muted);
+  font-weight:650;
+  letter-spacing:.2px;
+  margin:0 0 10px;
+}
+
+h1{
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.6;
+  margin:0 0 14px;
+  letter-spacing:-.4px;
+}
+
+.lede{
+  font-size: clamp(16px, 1.2vw, 19px);
+  color:var(--muted);
+  max-width: 72ch;
+  margin:0;
+}
+
+.section{
+  padding: var(--space-6) 0;
+}
+
+.section h2{
+  font-size: 1.6rem;
+  margin:0 0 10px;
+  letter-spacing:-.2px;
+}
+
+.section p{
+  font-size: 1.05rem;
+  color:var(--muted);
+  margin:0;
+  max-width: 92ch;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:16px;
+  margin: var(--space-5) 0 0;
+}
+
+.card{
+  background: var(--surface);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.card h2{
+  margin:0 0 10px;
+  font-size: 1.6rem;
+  letter-spacing:-.1px;
+}
+
+.card p{
+  font-size: 1.05rem;margin:0; color:var(--muted)}
+
+.card:hover{
+  background: var(--bg);
+}
+
+hr.sep{
+  font-size: 1.05rem;
+  border:0;
+  border-top:1px solid var(--line);
+  margin: 22px 0;
+}
+
+.tagline{
+  margin:10px 0 0;
+  color:var(--muted);
+}
+
+.pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top: 14px;
+}
+
+.pill{
+  padding:8px 11px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:var(--muted);
+  background: var(--bg);
+}
+
+.columns3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:16px;
+  margin-top: 18px;
+}
+
+/* Emerging Technologies: End-to-End Commitment row */
+.process-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  margin-top:12px;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.process-row span{
+  white-space:nowrap;
+}
+
+.process-arrow{
+  opacity:.8;
+  font-weight:800;
+}
+
+.stepnum{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  border-radius:12px;
+  background: var(--bg);
+  border:1px solid var(--line);
+  color:var(--text);
+  font-weight:800;
+  margin-right:10px;
+}
+
+.logo-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap:18px;
+  margin-top: 22px;
+}
+
+.logo{
+  height: 104px;
+  border-radius: 18px;
+  background: var(--bg);
+  border:1px solid rgba(0,0,0,.10);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 16px;
+  box-shadow: 0 12px 26px rgba(0,0,0,.18);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.logo:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(0,0,0,.24);
+}
+
+.logo img{
+  max-height: 72px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+}
+
+.team-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:16px;
+  margin-top: 18px;
+}
+
+.team-grid-lead{
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.person-card{
+  background: var(--surface);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow:hidden;
+}
+
+.person-card img{
+  width:100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display:block;
+}
+
+.person-body{
+  font-size: 18px;
+  padding: 14px 16px 16px;
+}
+
+.person-name{
+  font-weight:800;
+  letter-spacing:-.1px;
+}
+
+.person-title{
+  margin-top:6px;
+  color: var(--muted);
+  font-weight:650;
+}
+
+.bio{
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.bio li{margin: 8px 0}
+
+.site-footer{
+  border-top:1px solid var(--line);
+  padding: 28px 0 38px;
+  color:var(--muted);
+}
+
+.footer-row{
+  display:flex;
+  gap:16px;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+
+.footer-brand{max-width: 520px}
+.footer-title{color:var(--text); font-weight:800}
+.footer-subtitle{margin-top: 6px}
+
+.footer-links{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:var(--muted);
+  text-decoration: underline;
+  text-underline-offset:3px;
+}
+
+.footer-meta{margin-top: 14px}
+
+input, textarea{font: inherit}
+
+@media (max-width: 980px){
+  .nav-toggle{display:inline-flex}
+  .navlinks{
+    display:none;
+    position:absolute;
+    right:22px;
+    top:64px;
+    background: var(--bg);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    width: min(92vw, 420px);
+  }
+  .nav{position:relative}
+  .navlinks.open{display:flex; flex-direction:column; align-items:stretch}
+  .navlinks a{width:100%}
+  .columns3{grid-template-columns:1fr}
+  .grid{gap:14px}
+  .logo-grid{grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{scroll-behavior:auto !important}
+  .btn, .logo, .navlinks a{transition:none}
+}
+
+
+/* v7 image constraints */
+img{max-width:100%;height:auto;}
+.team-card img,.team-member img,.team-grid img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:16px;}
+.team-card img,.team-member img{max-height:260px;}
+.logo-grid img,.portfolio-logos img{width:100%;height:auto;max-height:64px;object-fit:contain;}
+@media (max-width: 640px){.logo-grid img,.portfolio-logos img{max-height:56px;}}
+
+
+/* v9 card standardization */
+.person-card{display:flex;flex-direction:column;gap:14px;}
+.person-body{
+  font-size: 18px;display:flex;flex-direction:column;gap:8px;}
+.person-name{line-height: 1.6;}
+.person-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.bio{margin:0;padding-left:18px;}
+.bio li{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden;}
+.team-grid{align-items:stretch;}
+.person-card{min-height:420px;}
+@media (max-width: 560px){.person-card{min-height:auto;}}
+
+
+/* v10 branding */
+:root{--cw-accent: #0b1f3a;}
+.brand-mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand-mark img{height:22px;width:auto;}
+.hero{position:relative;overflow:hidden;}
+@media (max-width: 640px){}
+.site-footer .footer-brand{display:flex;align-items:center;gap:10px;}
+.site-footer .footer-brand img{height:18px;width:auto;opacity:0.9;}
+
+
+/* v12 branding placement */
+
+.hero{position:relative;overflow:hidden;}
+
+@media (max-width: 640px){
+  
+}
+
+.brand-mark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+.brand-mark img{height:26px;width:26px;flex:0 0 26px;object-fit:contain;display:block;}
+@media (max-width: 640px){.brand-mark img{height:24px;width:24px;flex-basis:24px;}}
+
+.site-footer .footer-brand img{height:20px;width:20px;object-fit:contain;display:block;}
+
+
+/* v13 header logo */
+
+.site-header .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font-weight:600;}
+.site-header .brand .dot{display:none;} /* legacy */
+.site-header .brand img.brand-logo{height:26px;width:26px;object-fit:contain;display:block;flex:0 0 26px;}
+@media (max-width: 640px){.site-header .brand img.brand-logo{height:24px;width:24px;flex-basis:24px;}}
+
+
+/* v14 header emphasis */
+.site-header{
+  padding:22px 0;
+}
+.site-header .brand img.brand-logo{
+  height:44px;
+  width:44px;
+  flex:0 0 44px;
+}
+.site-header .brand span{
+  font-size:1.15rem;
+  letter-spacing:0.2px;
+}
+
+/* hero breathing room */
+.hero{
+  padding-top:120px;
+  padding-bottom:96px;
+}
+@media (max-width: 640px){
+  .hero{padding-top:96px;padding-bottom:72px;}
+  .site-header .brand img.brand-logo{height:38px;width:38px;flex-basis:38px;}
+}
+
+@media (max-width: 640px){
+  }
+
+
+/* v15 wordmark header */
+
+.site-header .brand{display:inline-flex;align-items:center;text-decoration:none;color:inherit;gap:0;}
+.site-header .brand .dot{display:none!important;}
+.site-header .brand img.brand-logo{display:none!important;} /* legacy */
+.site-header .brand span{display:none!important;} /* remove typed Cresting Wave if any remains */
+.site-header .brand img.brand-wordmark{
+  height:52px;
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+@media (max-width: 900px){
+  .site-header .brand img.brand-wordmark{height:46px;}
+}
+@media (max-width: 640px){
+  .site-header{padding:18px 0;}
+  .site-header .brand img.brand-wordmark{height:40px;}
+}
+
+
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none;z-index:1000;}
+.modal[aria-hidden="false"]{display:block;}
+.modal-backdrop{
+  font-size: 1.05rem;position:absolute;inset:0;background: var(--bg);}
+.modal-panel{
+  position:relative;
+  margin:min(10vh,80px) auto 0 auto;
+  width:min(760px, calc(100% - 32px));
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 30px 80px rgba(2,6,23,0.35);
+  padding:22px 22px 18px 22px;
+}
+.modal-close{
+  position:absolute;top:12px;right:14px;
+  width:40px;height:40px;border-radius:999px;
+  border:1px solid rgba(15,23,42,0.12);
+  background:#fff;
+  font-size:26px;line-height: 1.6;cursor:pointer;
+}
+.modal-content .modal-header{display:flex;gap:18px;align-items:flex-start;margin-bottom:14px;}
+.modal-content img{width:92px;height:92px;object-fit:cover;border-radius:18px;flex:0 0 92px;}
+.modal-content .modal-name{font-size:1.35rem;font-weight:750;line-height: 1.6;margin:2px 0 6px 0;}
+.modal-content .modal-title{color:rgba(15,23,42,0.72);font-weight:600;margin:0 0 8px 0;}
+.modal-content ul{margin:10px 0 0 0;padding-left:18px;}
+.modal-content li{margin:6px 0;line-height: 1.6;}
+@media (max-width: 560px){
+  .modal-content .modal-header{gap:14px;}
+  .modal-content img{width:76px;height:76px;border-radius:16px;flex-basis:76px;}
+}
+
+
+/* v19 team card readability */
+
+/* Keep cards uniform */
+.person-card{min-height:420px;}
+@media (max-width: 560px){.person-card{min-height:auto;}}
+
+/* Make backgrounds readable without expanding cards */
+.person-card .bio{margin:0;padding-left:18px;}
+.person-card .bio li{
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  line-height: 1.6;
+}
+/* Cap the total bio area to protect uniformity */
+.person-card .bio{max-height:110px; overflow:hidden;}
+
+
+/* v20 hero heading */
+
+.hero h1{max-width: 22ch; line-height: 1.6; letter-spacing:-0.02em;}
+@media (max-width: 640px){.hero h1{max-width: 18ch;}}
+
+
+
+
+/* v23 light polish – readability-first */
+/* Containers & spacing */
+.container{max-width:1100px;}
+.section{padding:56px 0;}
+@media (max-width: 640px){.section{padding:44px 0;}}
+
+/* Header – remove blur effects */
+.site-header{padding:14px 0; backdrop-filter:none;}
+.site-header .navlinks a{padding:8px 10px;}
+
+/* Hero – readable, not oversized */
+.hero{padding:72px 0 48px 0;}
+.hero h1{
+  max-width:28ch;
+  font-size:clamp(2rem,3.5vw,2.7rem);
+  line-height: 1.6;
+}
+.hero p{
+  max-width:64ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Typography sanity */
+h2{font-size: 1.6rem; margin-bottom:10px;}
+h3{font-size:1.15rem;}
+p{
+  font-size: 1.05rem;line-height: 1.6;}
+
+/* Cards – cleaner, less heavy */
+.card, .panel, .person-card{
+  border:1px solid rgba(15,23,42,0.08);
+  border-radius:16px;
+  box-shadow:none;
+}
+.person-card{padding:16px;}
+.person-card img{border-radius:14px;}
+
+/* Team grid – ensure nothing is clipped */
+.team-grid{align-items:stretch;}
+.person-card .bio{max-height:120px;}
+
+/* Logo grids */
+.logo-grid img, .portfolio-logos img{
+  max-height:68px;
+}
+
+/* Footer */
+.site-footer{padding:36px 0;}
+
+
+/* v25 team card scrolling */
+.person-card{
+  display:flex;
+  flex-direction:column;
+}
+
+.person-card .person-body{
+  font-size: 18px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  flex: 1 1 auto;
+  min-height: 0; /* allows inner scroll areas */
+}
+
+/* Replace clamping with an in-card scroll region for long bios */
+.person-card .bio{
+  margin-top:10px;
+  padding-left:18px;
+  max-height: 120px;
+  overflow: auto;
+}
+
+.person-card .bio li{
+  -webkit-line-clamp: unset;
+  display: list-item;
+  overflow: visible;
+  line-height: 1.6;
+}
+
+/* Subtle scrollbar styling (supported browsers only) */
+.person-card .bio{
+  scrollbar-width: thin;
+  scrollbar-color: rgba(15,23,42,0.25) transparent;
+}
+.person-card .bio::-webkit-scrollbar{width:10px;}
+.person-card .bio::-webkit-scrollbar-thumb{
+  background: var(--bg);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+.person-card .bio::-webkit-scrollbar-thumb:hover{
+  background: var(--bg);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+
+
+
+
+/* v31 home CTAs */
+
+.split-cta{
+  display:inline-flex;
+  align-items:center;
+  margin-top:16px;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,0.14);
+  background:#fff;
+  text-decoration:none;
+  font-weight:650;
+  color:rgba(15,23,42,0.92);
+}
+.split-cta:hover{transform:translateY(-1px); box-shadow:0 10px 25px rgba(2,6,23,0.08);}
+.split-cta:active{transform:translateY(0); box-shadow:none;}
+
+
+
+
+/* v40 home split alignment */
+.split{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:32px;
+  align-items:stretch;
+}
+@media (max-width: 900px){.split{grid-template-columns:1fr;}}
+
+.split .card{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.split .card-footer{
+  margin-top:auto;      /* forces footer to bottom of card */
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.split .card .pills{margin:0;}
+.split .split-cta{align-self:flex-start; margin:0;}
+
+
+
+/* Bigger, clearer logos on Focus Areas only */
+.logo-grid.selected-clients{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap:24px;
+  align-items:center;
+}
+
+.logo-grid.selected-clients .logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 16px;
+  border:1px solid rgba(15,23,42,0.08);
+  border-radius:16px;
+  background:#fff;
+}
+
+.logo-grid.selected-clients img{
+  width:100%;
+  max-width: 190px;
+  max-height: 92px;
+  object-fit: contain;
+  display:block;
+}
+
+.logo-grid.selected-clients .logo:hover img{
+  transform: scale(1.03);
+}
+
+@media (max-width: 640px){
+  .logo-grid.selected-clients{
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap:16px;
+  }
+  .logo-grid.selected-clients img{
+    max-width: 170px;
+    max-height: 78px;
+  }
+}
+
+
+/* v47 selected clients logos */
+.logo-grid.selected-clients{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap:20px;
+  align-items:center;
+}
+.logo-grid.selected-clients .logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 14px;
+  border:1px solid rgba(15,23,42,0.08);
+  border-radius:16px;
+  background:#fff;
+}
+.logo-grid.selected-clients img{
+  width:100%;
+  max-width: 200px;
+  max-height: 88px;
+  object-fit:contain;
+  display:block;
+}
+@media (max-width: 640px){
+  .logo-grid.selected-clients{
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap:14px;
+  }
+  .logo-grid.selected-clients img{max-height:76px;}
+}
+
+
+/* v49 focus logos */
+.focus-logos .logo-grid img,
+.logo-grid.selected-clients img,
+.logo-grid img{
+  max-height: 88px;
+}
+@media (max-width: 640px){
+  .focus-logos .logo-grid img,
+  .logo-grid.selected-clients img,
+  .logo-grid img{max-height: 74px;}
+}
+
+
+/* v50 home audience cards */
+/* Give the two audience cards more horizontal room on desktop */
+.home-hero .container{max-width: 1280px;}
+
+/* Make the two cards feel like premium, high-contrast modules */
+.audience-card{
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 18px 45px rgba(2,6,23,0.10);
+}
+
+.audience-card h2{
+  font-size: 1.6rem;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
+}
+
+.audience-card p{
+  font-size: 1.05rem;
+  margin: 0;
+  color: rgba(255,255,255,0.86);
+}
+
+.audience-card .card-footer{
+  margin-top: 18px;
+}
+
+.audience-card .pill{
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,0.16);
+  color: rgba(255,255,255,0.90);
+}
+
+.audience-card .split-cta{
+  border-color: rgba(255,255,255,0.22);
+  background: var(--bg);
+  color: rgba(255,255,255,0.95);
+}
+
+.audience-card .split-cta:hover{
+  box-shadow: 0 16px 34px rgba(2,6,23,0.18);
+}
+
+/* Distinct but on-brand color treatments */
+.audience-tech{
+  background: linear-gradient(135deg, #0f384c 0%, #045e72 100%);
+}
+
+.audience-company{
+  background: linear-gradient(135deg, #113e52 0%, #28899d 100%);
+}
+
+/* Ensure the cards mirror each other and buttons align */
+.home-hero .grid{
+  align-items: stretch;
+}
+.home-hero .audience-card{
+  display:flex;
+  flex-direction:column;
+}
+.home-hero .audience-card .card-footer{
+  margin-top:auto;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+/* Slightly bigger type on these cards only */
+@media (min-width: 900px){
+  .audience-card h2{font-size: 1.6rem;}
+  .audience-card p{font-size: 1.05rem; line-height: 1.6;}
+}
+@media (max-width: 640px){
+  .audience-card{padding: 20px;}
+}
+
+
+
+/* Make the split block extend beyond container indents */
+.home-split-bleed .split{
+  width: min(1400px, calc(100vw - 48px));
+  margin-left: calc(50% - 50vw);
+  left: 50%;
+  transform: translateX(0);
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Ensure the split grid still centers nicely */
+@media (min-width: 1200px){
+  .home-split-bleed .split{
+    margin-left: calc(50% - 700px);
+    width: 1400px;
+  }
+}
+@media (max-width: 640px){
+  .home-split-bleed .split{
+    width: calc(100vw - 28px);
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+
+/* Card styling: do NOT revert on hover */
+.home-split-bleed .split .card{
+  border:1px solid rgba(255,255,255,0.22);
+  box-shadow: 0 18px 55px rgba(2,6,23,0.18);
+  color: rgba(255,255,255,0.92);
+}
+
+/* If there is a generic card hover elsewhere, override it here */
+.home-split-bleed .split .card:hover{
+  border:1px solid rgba(255,255,255,0.28);
+  box-shadow: 0 22px 70px rgba(2,6,23,0.22);
+  filter: saturate(1.03);
+}
+
+/* Text inside cards */
+.home-split-bleed .split .card h2{
+  font-size: 1.6rem;color:#fff;}
+.home-split-bleed .split .card p,
+.home-split-bleed .split .card li{color: rgba(255,255,255,0.82);}
+
+/* Pills pop on dark background */
+.home-split-bleed .split .pills .pill{
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.92);
+}
+
+/* CTA button keeps contrast */
+.home-split-bleed .split .split-cta{
+  background: var(--bg);
+  color: rgba(15,23,42,0.95);
+  border: 1px solid rgba(255,255,255,0.65);
+}
+.home-split-bleed .split .split-cta:hover{
+  box-shadow: 0 12px 30px rgba(2,6,23,0.22);
+}
+
+/* Ensure equal-height + bottom-aligned footers (in case) */
+.home-split-bleed .split .card{display:flex; flex-direction:column; height:100%;}
+.home-split-bleed .split .card-footer{margin-top:auto;}
+
+
+
+/* Break the split block out of the container */
+.home-split-bleed .split{
+  width: min(1400px, calc(100vw - 48px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Force the section to ignore container side padding for just this block */
+.home-split-bleed .container{
+  max-width: 1120px; /* keep the rest aligned */
+}
+.home-split-bleed .split{
+  /* full-bleed feel: extend beyond container by using negative margins */
+  margin-left: calc(-1 * (max(0px, (min(1120px, 100vw) - 100vw) / 2)));
+  margin-right: calc(-1 * (max(0px, (min(1120px, 100vw) - 100vw) / 2)));
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (max-width: 900px){
+  .home-split-bleed .split{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+
+/* Keep both cards equal height and align CTAs */
+.home-split-bleed .split .card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.home-split-bleed .split .card-footer{
+  margin-top: auto;
+}
+
+/* IMPORTANT: lock background and border on hover so color never changes */
+.home-split-bleed .split .card,
+.home-split-bleed .split .card:hover,
+.home-split-bleed .split .card:focus-within{
+  background: inherit !important;
+  border-color: rgba(255,255,255,0.22) !important;
+}
+
+/* Hover effect: only lift, no color change */
+.home-split-bleed .split .card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 22px 70px rgba(2,6,23,0.22);
+}
+
+/* Make sure generic hover rules don’t override colors inside */
+.home-split-bleed .split .card *,
+.home-split-bleed .split .card:hover *{
+  color: inherit;
+}
+
+/* CTA stays consistent on hover */
+.home-split-bleed .split .split-cta,
+.home-split-bleed .split .split-cta:hover{
+  background: rgba(255,255,255,0.92) !important;
+  color: rgba(15,23,42,0.95) !important;
+  border: 1px solid rgba(255,255,255,0.65) !important;
+}
+
+/* Pills consistent */
+.home-split-bleed .split .pills .pill{
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.92);
+}
+
+
+/* v53 home split – true horizontal breakout + locked hover backgrounds */
+.home-split-bleed .home-split-wrap{
+  font-size: 1.05rem;
+  width:100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0 56px; /* creates the "beyond indent" feel */
+}
+@media (max-width: 900px){
+  .home-split-bleed .home-split-wrap{
+  font-size: 1.05rem;padding:0 20px;}
+}
+@media (max-width: 520px){
+  .home-split-bleed .home-split-wrap{
+  font-size: 1.05rem;padding:0 14px;}
+}
+
+/* Keep the grid centered but wider than the normal container */
+.home-split-bleed .home-split-wrap .split{
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Cards: explicit backgrounds per card so hover can’t revert */
+.home-split-card{
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.92);
+  overflow: hidden;
+}
+.home-split-tl{
+  background: linear-gradient(135deg, rgba(9,38,56,1) 0%, rgba(12,94,108,1) 55%, rgba(18,140,131,1) 100%) !important;
+}
+.home-split-et{
+  background: linear-gradient(135deg, rgba(10,45,70,1) 0%, rgba(10,85,110,1) 55%, rgba(20,160,140,1) 100%) !important;
+}
+
+/* LOCKED hover: same background, no filters, no color shifts */
+.home-split-card:hover,
+.home-split-card:focus-within{
+  background: inherit !important;
+  background-image: inherit !important;
+  filter: none !important;
+}
+.home-split-tl:hover, .home-split-tl:focus-within{
+  background: linear-gradient(135deg, rgba(9,38,56,1) 0%, rgba(12,94,108,1) 55%, rgba(18,140,131,1) 100%) !important;
+}
+.home-split-et:hover, .home-split-et:focus-within{
+  background: linear-gradient(135deg, rgba(10,45,70,1) 0%, rgba(10,85,110,1) 55%, rgba(10,85,110,1) 55%, rgba(20,160,140,1) 100%) !important;
+}
+
+/* Hover interaction: only lift + shadow, no color changes */
+.home-split-card{
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 18px 55px rgba(2,6,23,0.18);
+}
+.home-split-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 22px 70px rgba(2,6,23,0.22);
+}
+
+/* Text + pills on dark backgrounds */
+.home-split-card h2{
+  font-size: 1.6rem;color:#fff;}
+.home-split-card p, .home-split-card li{color: rgba(255,255,255,0.82);}
+.home-split-card .pills .pill{
+  background: var(--bg);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.92);
+}
+
+/* CTA button: fixed colors on hover */
+.home-split-card .split-cta,
+.home-split-card .split-cta:hover{
+  background: rgba(255,255,255,0.92) !important;
+  color: rgba(15,23,42,0.95) !important;
+  border: 1px solid rgba(255,255,255,0.65) !important;
+}
+
+/* Ensure equal heights and aligned CTAs */
+.home-split-bleed .split .card{display:flex; flex-direction:column; height:100%;}
+.home-split-bleed .split .card-footer{margin-top:auto;}
+
+
+/* v54 split cta fill hover */
+.home-split-card .split-cta{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 140ms ease, transform 160ms ease;
+}
+
+.home-split-card .split-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: var(--bg);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms ease;
+  z-index: -1;
+}
+
+/* Rapid "fill" on hover */
+.home-split-card .split-cta:hover::before{
+  transform: scaleX(1);
+}
+
+/* Text color flips when filled */
+.home-split-card .split-cta:hover{
+  color: rgba(255,255,255,0.96) !important;
+  transform: translateY(-1px);
+}
+
+/* Make it feel snappy on click */
+.home-split-card .split-cta:active{
+  transform: translateY(0);
+}
+
+
+
+
+
+/* v59 how works spacing */
+.how-works h2{
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+.how-works p{
+  font-size: 1.05rem;
+  margin: 0 0 14px 0;
+}
+.how-works p + p{
+  font-size: 1.05rem; margin-top: 0; }
+.how-works p strong{
+  display: inline-block;
+  margin: 10px 0 4px 0;
+}
+.how-works ul{
+  margin-top: 10px;
+}
+.how-works .stack, .how-works .stack-lg{
+  gap: 14px;
+}
+@media (max-width: 640px){
+  .how-works h2{
+  font-size: 1.6rem;margin-bottom: 12px;}
+  .how-works p{
+  font-size: 1.05rem;margin-bottom: 12px;}
+}
+
+
+/* v60 tight hero spacing */
+body.tight-hero .hero{
+  padding-bottom: 28px;
+}
+body.tight-hero .hero + .section{
+  padding-top: 34px;
+}
+@media (max-width: 640px){
+  body.tight-hero .hero{padding-bottom: 22px;}
+  body.tight-hero .hero + .section{padding-top: 28px;}
+}
+
+
+/* v61 hero subcopy and fill cta */
+.hero .hero-subcopy{
+  color: rgba(15,23,42,0.72);
+}
+/* If hero is on dark background elsewhere, keep readable */
+.hero.dark .hero-subcopy{
+  color: rgba(255,255,255,0.84);
+}
+
+/* Further tighten tech leaders hero-to-content gap */
+body.tight-hero-plus .hero{
+  padding-bottom: 18px;
+}
+body.tight-hero-plus .hero + .section{
+  padding-top: 26px;
+}
+@media (max-width: 640px){
+  body.tight-hero-plus .hero{padding-bottom: 16px;}
+  body.tight-hero-plus .hero + .section{padding-top: 22px;}
+}
+
+/* Fill hover for Explore Focus Areas */
+a.fill-cta{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+a.fill-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: var(--bg);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms ease;
+  z-index: -1;
+}
+a.fill-cta:hover::before{
+  transform: scaleX(1);
+}
+a.fill-cta:hover{
+  color: rgba(255,255,255,0.96) !important;
+}
+
+
+
+
+
+/* v65 force hero body text to match body copy color exactly */
+.hero .hero-body-match{
+  color: #94a3b8 !important; /* matches body copy color used later */
+  font-weight: 400 !important;
+}
+
+
+/* v67 split-cta animation (shared) */
+.split-cta{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.split-cta::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: var(--bg);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms ease;
+  z-index: -1;
+}
+.split-cta:hover::before{
+  transform: scaleX(1);
+}
+.split-cta:hover{
+  color: rgba(255,255,255,0.96) !important;
+}
+
+
+/* v68 btn fill hover (Explore Focus Areas) */
+.btn.btn-fill{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn.btn-fill::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: var(--bg);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms ease;
+  z-index: -1;
+}
+.btn.btn-fill:hover::before{
+  transform: scaleX(1);
+}
+.btn.btn-fill:hover{
+  color: rgba(255,255,255,0.96) !important;
+}
+
+
+
+
+
+
+/* v71 emerging hero fixes: readable muted text + remove dead space */
+.hero .hero-muted{
+  color: var(--muted) !important;
+  font-weight: 400;
+  margin-top: 12px;
+}
+
+body.tight-hero.tight-hero-plus .hero{
+  padding-bottom: 10px !important;
+}
+body.tight-hero.tight-hero-plus .hero + .section{
+  padding-top: 16px !important;
+}
+@media (max-width: 640px){
+  body.tight-hero.tight-hero-plus .hero{padding-bottom: 8px !important;}
+  body.tight-hero.tight-hero-plus .hero + .section{padding-top: 14px !important;}
+}
+
+
+/* v81 focus areas spacing */
+body.tight-hero .hero{
+  padding-bottom: 20px;
+}
+body.tight-hero .hero + .section{
+  padding-top: 24px;
+}
+
+
+/* v82 our team spacing */
+body.tight-hero .hero{
+  padding-bottom: 20px;
+}
+body.tight-hero .hero + .section{
+  padding-top: 24px;
+}
+
+
+/* v83 focus areas opener color match */
+.fa-opener-match{
+  color: var(--muted) !important;
+}
+
+
+/* v91 hero intro bg (ONLY the opening header block) */
+.hero-intro-bg{
+  position: relative;
+  padding: 56px 48px;
+  border-radius: 24px;
+  background-image: url('images/thierry-meier-yDS3sLuSM5c-unsplash.jpg');
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.hero-intro-bg::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    180deg,
+    rgba(8,15,25,0.35) 0%,
+    rgba(8,15,25,0.52) 55%,
+    rgba(8,15,25,0.70) 100%
+  );
+}
+.hero-intro-bg > *{
+  position: relative;
+  z-index: 1;
+}
+.hero-intro-bg .kicker{
+  color: rgba(255,255,255,0.85) !important;
+}
+.hero-intro-bg h1{
+  color: rgba(255,255,255,0.98) !important;
+}
+.hero-intro-bg .lede{
+  color: rgba(255,255,255,0.82) !important;
+  max-width: 68ch;
+}
+@media (max-width: 640px){
+  .hero-intro-bg{
+    padding: 42px 22px;
+    border-radius: 18px;
+  }
+}
+
+
+
+
+/* v93 Technology Leaders hero intro bg (matches home hero intro block pattern) */
+.tech-hero-intro{
+  background-image: url('images/sean-pollock-PhYq704ffdA-unsplash.jpg');
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+}
+.tech-hero-intro h1{
+  color: rgba(255,255,255,0.98) !important;
+}
+.tech-hero-intro p{
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.82) !important;
+}
+
+
+/* v94 Emerging Technologies hero intro bg (matches home hero intro block pattern) */
+.emerging-hero-intro{
+  background-image: url('images/conny-schneider-xuTJZ7uD7PI-unsplash.jpg');
+  background-size: cover;
+  background-position: center 50%;
+  background-repeat: no-repeat;
+}
+.emerging-hero-intro h1{
+  color: rgba(255,255,255,0.98) !important;
+}
+.emerging-hero-intro p{
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.84) !important;
+}
+.emerging-hero-intro .kicker{
+  color: rgba(255,255,255,0.85) !important;
+}
+
+
+/* v95 Focus Areas hero intro bg */
+.focus-hero-intro{
+  background-image: url('images/ryoji-iwata-a-qsFZimp1M-unsplash.jpg');
+  background-size: cover;
+  background-position: center 55%;
+  background-repeat: no-repeat;
+}
+.focus-hero-intro h1{
+  color: rgba(255,255,255,0.98) !important;
+}
+.focus-hero-intro p{
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.84) !important;
+}
+
+
+/* v97 our team grid no-scroll */
+body.team-page .team-grid{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 980px){
+  body.team-page .team-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px){
+  body.team-page .team-grid{ grid-template-columns: 1fr; }
+}
+
+/* remove in-card scrolling/clamping; show full career history */
+body.team-page .person-card .bio{
+  max-height: none !important;
+  overflow: visible !important;
+  scrollbar-width: auto;
+}
+body.team-page .person-card .bio::-webkit-scrollbar{ width: 0; height: 0; }
+body.team-page .person-card .bio li{
+  display: list-item !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
+  line-height: 1.6;
+}
+
+
+/* Make email links clearly interactive */
+a[href^="mailto:"]{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--accent);
+}
+a[href^="mailto:"]:hover{
+  opacity: .85;
+}
+
+
+/* Keep footer tagline on one line */
+.footer-subtitle{
+  white-space: nowrap;
+}
+
+
+/* Footer brand and tagline on single line */
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  white-space: nowrap;
+}
+
+.footer-title{
+  white-space: nowrap;
+}
+
+.footer-subtitle{
+  white-space: nowrap;
+  margin-top: 0;
+}
+
+
+/* Homepage outcome emphasis */
+.outcome{
+  margin-top: 12px;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+
+/* Force single-line heading on homepage split cards */
+.nowrap-heading{
+  white-space: nowrap;
+}
+
+
+/* Ensure split card headings stay on one line */
+.audience-card h2{
+  font-size: 1.6rem;
+  white-space: nowrap;
+}
+
+
+/* Slightly reduce font size to keep Emerging Technology Companies on one line */
+.emerging-heading{
+  font-size: 1.45rem;
+  white-space: normal;
+  line-height: 1.25;
+}
+
+
+/* Home split headings: fit cleanly in 2-up cards without clipping */
+.home-split-card.audience-card h2{
+  font-size: 1.55rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  white-space: normal;
+}
+
+/* Give headings a touch more usable width by trimming padding slightly */
+.home-split-card.audience-card{
+  padding: 22px;
+}
+
+@media (max-width: 520px){
+  /* On very small screens, allow wrap instead of clipping */
+  .home-split-card.audience-card h2{
+  font-size: 1.6rem;
+    white-space: normal;
+  }
+}
+
+
+
+}
+@media (max-width: 640px){
+  .columns4{grid-template-columns: 1fr;}
+}
+
+
+.columns4{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:16px;
+  margin-top: 18px;
+  grid-auto-rows: 1fr;
+}
+
+@media (max-width: 980px){
+  .columns4{grid-template-columns: repeat(2, 1fr);}
+}
+@media (max-width: 640px){
+  .columns4{grid-template-columns: 1fr;}
+}
+
+
+/* Technology Leaders: Our Process cards (avoid nested .card styling conflicts) */
+.process-card{
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  padding: 22px;
+  background: rgba(232,237,247,.03);
+  box-shadow: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.columns4{align-items: stretch;}
+.columns4 .process-card{margin:0;}
+
+
+.process-card strong{
+  white-space: nowrap;
+}
+
+
+/* Align step number and title horizontally */
+.process-step-header{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.process-step-header strong{
+  white-space: nowrap;
+}
+
+
+/* Make Our Process cards equal height */
+.columns4{
+  grid-auto-rows: 1fr;
+}
+.columns4 .process-card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+}
+
+
+/* Our Process: force perfectly uniform card heights */
+.columns4 .process-card{
+  height: 180px;
+  overflow: hidden;
+}
+
+@media (max-width: 980px){
+  .columns4 .process-card{
+    height: 190px;
+  }
+}
+
+@media (max-width: 640px){
+  .columns4 .process-card{
+    height: auto;
+    overflow: visible;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.25); }
+  .btn:hover { transform: translateY(-1px); }
+}
+
+
+
+/* Subtle motion (respects prefers-reduced-motion) */
+.cw-reveal{
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition: opacity 600ms ease, transform 600ms ease;
+  will-change: opacity, transform;
+}
+.cw-reveal.cw-reveal-in{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Micro-interactions */
+.card, .process-card, .team-card, .person-card, .focus-card{
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.card:hover, .process-card:hover, .team-card:hover, .person-card:hover, .focus-card:hover{
+  transform: translate3d(0, -2px, 0);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+  border-color: rgba(255,255,255,0.22);
+}
+
+.btn{
+  transition: transform 200ms ease, filter 200ms ease;
+}
+.btn:hover{
+  transform: translate3d(0, -1px, 0);
+  filter: brightness(1.06);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .cw-reveal{opacity:1; transform:none; transition:none;}
+  .card, .process-card, .team-card, .person-card, .focus-card, .btn{transition:none;}
+  .card:hover, .process-card:hover, .team-card:hover, .person-card:hover, .focus-card:hover, .btn:hover{transform:none; filter:none; box-shadow:none;}
+}
+
+
+
+
+/* Logo grid alignment (no resize) */
+.logo-grid .logo{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.logo-grid .logo img{
+  display:block;
+  object-fit: contain;
+}
+
+
+
+/* Team headshots: soften presentation */
+.person-card{
+  position: relative;
+}
+.person-card img{
+  transition: opacity 600ms ease, transform 700ms ease, filter 700ms ease;
+  filter: saturate(0.98) contrast(0.98);
+}
+
+/* subtle gradient to reduce harsh edge between image and body */
+.person-card::before{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:0;
+  height: 18%;
+  pointer-events:none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0));
+  opacity: 0.55;
+}
+.person-card::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top: 72%;
+  height: 28%;
+  pointer-events:none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.22));
+  opacity: 0.35;
+}
+
+/* reveal: make headshots fade in gently instead of popping */
+.person-card.cw-reveal img{
+  opacity: 0;
+  transform: scale(1.01);
+  filter: saturate(0.92) contrast(0.95);
+}
+.person-card.cw-reveal.cw-reveal-in img{
+  opacity: 1;
+  transform: scale(1);
+  filter: saturate(0.98) contrast(0.98);
+}
+
+/* hover: subtle life */
+.person-card:hover img{
+  transform: scale(1.02);
+  filter: saturate(1.02) contrast(1.02);
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .person-card img{transition:none;}
+  .person-card:hover img{transform:none; filter:none;}
+}
+
+.person-card.cw-reveal{transform: translate3d(0, 8px, 0);}
+
+
+
+
+/* Selected Clients stagger reveal (reduces choppy wall-of-logos pop-in) */
+.selected-clients.cw-stagger .logo{
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 520ms ease, transform 520ms ease;
+  will-change: opacity, transform;
+}
+.selected-clients.cw-stagger.cw-stagger-in .logo{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .selected-clients.cw-stagger .logo{opacity:1; transform:none; transition:none;}
+}
+
+
+/* Global typography scaling: keep readability on small screens */
+@media (max-width: 640px){
+  html,body{font-size:18px;}
+  body{font-size:18px;}
+}
+
+
+/* Emerging Technologies heading wrap fix */
+.emerging-heading{
+  white-space: normal;
+  line-height: 1.35;
+}
+
+/* Slightly reduce size only when needed on large screens */
+@media (min-width: 1024px){
+  .emerging-heading{
+    font-size: 1.45rem;
+  }
+}
+
+
+/* Final override: prevent heading clipping on Home split cards */
+.home-split-card.audience-card .emerging-heading{
+  white-space: normal !important;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+
+/* Card text width override (reduce unused right-side space) */
+.card p{
+  max-width: none;
+}
+@media (max-width: 640px){
+  .card p{max-width: 78ch;}
+}
+
+
+/* Process step number emphasis (Technology Leaders) */
+.process-step-header .stepnum{
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+}
+
+/* Slightly reduce on very small screens */
+@media (max-width: 640px){
+  .process-step-header .stepnum{
+    font-size: 1.8rem;
+    min-width: 2rem;
+  }
+}
+
+
+/* Align process descriptions under titles (not under numbers) */
+.process-card{
+  position: relative;
+}
+
+/* Offset body text to align with title text */
+.process-card p{
+  margin-left: calc(2.4rem + 8px); /* step number width + header gap */
+}
+
+/* On small screens, reduce offset slightly */
+@media (max-width: 640px){
+  .process-card p{
+    margin-left: calc(2rem + 8px);
+  }
+}
+
+
+/* Emerging Technologies: align process descriptions under titles */
+.emerging-technologies .process-card p,
+.page-emerging .process-card p{
+  margin-left: calc(2.4rem + 8px);
+}
+
+@media (max-width: 640px){
+  .emerging-technologies .process-card p,
+  .page-emerging .process-card p{
+    margin-left: calc(2rem + 8px);
+  }
+}
+
+
+/* How Engagement Works step formatting (Emerging Technologies) */
+body.tight-hero-plus .columns3 .card .stepnum,
+body.tight-hero-plus .columns4 .card .stepnum{
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+  margin-right: 8px;
+}
+
+/* Align description text under the step title (not under the number) */
+body.tight-hero-plus .columns3 .card > p,
+body.tight-hero-plus .columns4 .card > p{
+  margin-left: calc(2.4rem + 8px);
+}
+
+@media (max-width: 640px){
+  body.tight-hero-plus .columns3 .card .stepnum,
+  body.tight-hero-plus .columns4 .card .stepnum{
+    font-size: 1.8rem;
+    min-width: 2rem;
+  }
+  body.tight-hero-plus .columns3 .card > p,
+  body.tight-hero-plus .columns4 .card > p{
+    margin-left: calc(2rem + 8px);
+  }
+}
+
+
+/* Focus Areas: align blurbs directly under titles */
+.focus-card{
+  display: flex;
+  flex-direction: column;
+}
+
+.focus-card h3{
+  margin-bottom: 8px;
+}
+
+.focus-card p{
+  margin-top: 0;
+  margin-left: 0;
+  max-width: none;
+}
+
+
+/* Selected clients logo rollover */
+.logo-grid.selected-clients .logo{
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.logo-grid.selected-clients .logo img{
+  transition: transform 240ms ease, filter 240ms ease, opacity 240ms ease;
+}
+.logo-grid.selected-clients .logo .logo-overlay{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  background: rgba(0,0,0,0.62);
+  opacity: 0;
+  transform: translate3d(0, 6px, 0);
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+.logo-grid.selected-clients .logo:hover .logo-overlay{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.logo-grid.selected-clients .logo:hover img{
+  transform: scale(1.03);
+  filter: blur(1px);
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .logo-grid.selected-clients .logo img,
+  .logo-grid.selected-clients .logo .logo-overlay{transition:none;}
+  .logo-grid.selected-clients .logo:hover img{transform:none; filter:none; opacity:1;}
+  .logo-grid.selected-clients .logo .logo-overlay{transform:none;}
+}
+
+
+
+
+
+/* make logos visibly larger than the default .logo img rule */
+.logo.flip-card img{
+  max-height: 86px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo.flip-card .flip-back{
+  transform: rotateY(180deg);
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,.10);
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.logo.flip-card .flip-back span{
+  padding: 0 6px;
+}
+
+/* safety: if any legacy overlay survives somewhere, hide it on flip cards */
+.logo.flip-card .logo-overlay{
+  display: none !important;
+}
+
+
+/* ================================
+   Focus Areas: Selected Clients flip cards (v173)
+   ================================ */
+.logo.flip-card{
+  position: relative;
+  perspective: 1000px;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Make the tile itself slightly taller so logos don't feel cramped */
+.logo-grid .logo.flip-card{
+  height: 118px;
+}
+
+.logo.flip-card .flip-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 560ms ease;
+}
+
+.logo.flip-card:hover .flip-inner{
+  transform: rotateY(180deg);
+}
+
+.logo.flip-card .flip-front,
+.logo.flip-card .flip-back{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  backface-visibility: hidden;
+  border-radius: 18px;
+}
+
+/* Bigger logo than the global .logo img max-height */
+.logo.flip-card .flip-front img{
+  max-height: 92px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* White back, no black box */
+.logo.flip-card .flip-back{
+  transform: rotateY(180deg);
+  background: #ffffff;
+  color: #111111;
+  border: 1px solid rgba(0,0,0,.10);
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.logo.flip-card .flip-back span{
+  padding: 0 6px;
+}
+
+/* safety: if any legacy overlay survives somewhere, hide it on flip cards */
+.logo.flip-card .logo-overlay{
+  display: none !important;
+}
+
+
+/* ================================
+   Focus Areas: logo size parity fix
+   ================================ */
+
+/* Match original logo tile visual scale */
+.logo-grid .logo.flip-card{
+  height: 132px;
+}
+
+/* Remove padding that was shrinking the logos */
+.logo.flip-card .flip-front,
+.logo.flip-card .flip-back{
+  padding: 0;
+}
+
+/* Let logos actually fill the card like before */
+.logo.flip-card .flip-front img{
+  max-height: 100%;
+  max-width: 100%;
+  padding: 18px;
+}
+
+
+
+
+
+/* DO NOT set a fixed height on the entire grid (that caused overlap). Only size the tiles. */
+.logo-grid .logo.flip-card{
+  height: 104px; /* keep original tile height */
+}
+
+/* Flip card plumbing */
+.logo.flip-card{
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  perspective: 1000px;
+}
+
+.logo.flip-card .flip-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 560ms ease;
+}
+
+.logo.flip-card:hover .flip-inner{
+  transform: rotateY(180deg);
+}
+
+.logo.flip-card .flip-front,
+.logo.flip-card .flip-back{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  border-radius: 18px;
+}
+
+/* Make logos larger without breaking layout:
+   override the global .logo img max-height:72px with higher specificity. */
+.logo.flip-card .flip-front{
+  padding: 10px;
+}
+
+.logo.flip-card .flip-front img{
+  max-height: 86px !important;
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block;
+}
+
+/* White back, consistent with card */
+.logo.flip-card .flip-back{
+  transform: rotateY(180deg);
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,.10);
+  text-align: center;
+  padding: 12px;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.logo.flip-card .logo-overlay{
+  display: none !important;
+}
+
+
+/* ================================
+   Focus Areas: flip cards size + layout (v176)
+   ================================ */
+
+/* Larger tiles (only tiles), so logos can be larger without crushing */
+.logo-grid .logo.flip-card{
+  height: 128px;
+}
+
+/* Flip plumbing */
+.logo.flip-card{
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  perspective: 1000px;
+}
+
+.logo.flip-card .flip-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 560ms ease;
+}
+
+.logo.flip-card:hover .flip-inner{
+  transform: rotateY(180deg);
+}
+
+.logo.flip-card .flip-front,
+.logo.flip-card .flip-back{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  border-radius: 18px;
+}
+
+/* BIG logo: fill the tile, override global max-height:72px */
+.logo.flip-card .flip-front{
+  padding: 0;
+}
+
+.logo.flip-card .flip-front img{
+  max-height: none !important;
+  max-width: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  padding: 14px !important; /* visual breathing room similar to original */
+  display: block;
+}
+
+/* White back, consistent with cards */
+.logo.flip-card .flip-back{
+  transform: rotateY(180deg);
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,.10);
+  text-align: center;
+  padding: 14px;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.logo.flip-card .logo-overlay{
+  display: none !important;
+}
+
+
+
+
+/* ================================
+   Layout polish: keep section boxes but kill the ugly horizontal "shadow bands" (v178)
+   Applies to the full-width (span-12) cards used as section containers on pages like Home.
+   ================================ */
+.grid > .card[style*="grid-column: span 12"]{
+  background: var(--surface) !important;
+  border: 1px solid var(--line) !important;
+  padding: 22px !important;
+  /* softer, tighter shadow so it doesn't read as a horizontal gradient stripe */
+  box-shadow: 0 10px 26px rgba(0,0,0,.22) !important;
+}
+
+/* Don't let hover styling create a second "band" */
+.grid > .card[style*="grid-column: span 12"]:hover{
+  background: var(--surface) !important;
+  transform: none !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.22) !important;
+}
+
+/* If the global .card:hover is creating visible seams elsewhere, keep it subtle */
+.card:hover{
+  background: var(--surface) !important;
+}
+
+
+/* ================================
+   Layout polish: kill horizontal "stripe" caused by translucent surfaces over the body gradients (v179)
+   The stripe you're seeing is the BODY background bleeding through semi-transparent cards.
+   Make the big section containers opaque and remove drop shadow banding.
+   ================================ */
+.grid > .card[style*="grid-column: span 12"]{
+  background: var(--surface-strong) !important; /* opaque enough to stop banding */
+  border: 1px solid var(--line) !important;
+  box-shadow: none !important; /* shadows were reading as a horizontal gradient */
+}
+
+.grid > .card[style*="grid-column: span 12"]:hover{
+  background: var(--surface-strong) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep normal cards feeling "boxed" without the heavy stripe */
+.card{
+  box-shadow: 0 10px 26px rgba(0,0,0,.28);
+}
+
+
+/* ================================
+   Stripe fix (v180)
+   The repeated horizontal "gradient stripes" come from the .hero background being set separately
+   from the body background. Remove hero-level backgrounds so the page reads as one canvas.
+   ================================ */
+.hero,
+.hero-tight{
+  background: transparent !important;
+}
+
+
+/* ================================
+   Stripe fix (v181)
+   The remaining "stripes" are the body radial gradients scrolling with the page,
+   making translucent section cards look like the background is segmented.
+   Lock the decorative gradients to the viewport so the canvas is continuous.
+   ================================ */
+html{
+  background: var(--bg);
+}
+body{
+  position: relative;
+  background: var(--bg) !important; /* remove scrolling gradients from body background */
+}
+
+/* fixed decorative layer */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 520px at 20% -10%, rgba(110,231,255,.16), transparent 60%),
+    radial-gradient(900px 520px at 90% 0%, rgba(167,139,250,.14), transparent 60%),
+    radial-gradient(700px 500px at 50% 120%, rgba(110,231,255,.10), transparent 60%);
+}
+
+
+/* ================================
+   Focus Areas: flip card back styling (v182)
+   ================================ */
+.logo.flip-card .flip-back{
+  background: #ffffff !important;
+  color: #0b0f1a !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  line-height: 1.15;
+}
+
+h2 {
+  line-height: 1.2;
+}
+
+h3 {
+  line-height: 1.25;
+}
+
+
+/* ================================
+   Nav (v188): hamburger dropdown that actually shows and is clickable
+   ================================ */
+.nav-toggle{
+  cursor: pointer;
+}
+
+/* Backdrop catches clicks so menu can sit above everything */
+.nav-backdrop{
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: transparent;
+}
+
+/* Mobile dropdown */
+@media (max-width: 980px){
+  .nav-toggle{ display:inline-flex !important; }
+
+  /* Hidden by default */
+  .navlinks{
+    display: none !important;
+  }
+
+  /* When open, show as a real dropdown list */
+  .navlinks.open{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+
+    position: fixed !important;
+    top: 64px !important;
+    right: 16px !important;
+    left: auto !important;
+
+    width: min(92vw, 420px) !important;
+    background: var(--bg) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 16px !important;
+    padding: 10px !important;
+
+    z-index: 9999 !important;
+    box-shadow: var(--shadow) !important;
+    pointer-events: auto !important;
+  }
+
+  .navlinks.open a{
+    width: 100%;
+  }
+
+  /* Keep header above hero overlays */
+  .site-header{ z-index: 10000 !important; }
+
+  /* Never let hero overlay intercept clicks */
+  .hero-intro-bg::before{ pointer-events:none !important; }
+}
+
+
+/* ================================
+   Nav restored (v189)
+   Revert to the earlier working hamburger + dropdown behavior.
+   ================================ */
+.nav-toggle{
+  display:none;
+  border:1px solid var(--line);
+  background: var(--bg);
+  border-radius:14px;
+  padding:10px 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+
+.navlinks{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-end;
+}
+
+.navlinks a{
+  padding:9px 12px;
+  border-radius:12px;
+  color:var(--muted);
+  border:1px solid transparent;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.navlinks a:hover{
+  background: var(--bg);
+  border-color: var(--line);
+}
+
+.navlinks a.active{
+  color:var(--text);
+  background: var(--bg);
+  border-color: var(--line);
+}
+
+
+@media (max-width: 980px){
+  .nav-toggle{display:inline-flex}
+  .navlinks{
+    display:none;
+    position:absolute;
+    right:22px;
+    top:64px;
+    background: var(--bg);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    width: min(92vw, 420px);
+  }
+  .nav{position:relative}
+  .navlinks.open{display:flex; flex-direction:column; align-items:stretch}
+  .navlinks a{width:100%}
+  .columns3{grid-template-columns:1fr}
+  .grid{gap:14px}
+  .logo-grid{grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))}
+}
+
+
+
+/* Ensure nothing later in the stylesheet overrides the open state */
+@media (max-width: 980px){
+  .navlinks.open{
+    display:flex !important;
+  }
+  .navlinks{
+    pointer-events: auto !important;
+  }
+}
+
+
+/* ================================
+   Nav (v190): CSS-only hamburger toggle (no JS dependency)
+   ================================ */
+.nav-check{
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Ensure header is always on top and clickable */
+.site-header{ z-index: 10000 !important; }
+
+/* Mobile behavior */
+@media (max-width: 980px){
+  .nav{ position: relative; }
+
+  /* hide menu by default */
+  .navlinks{ display: none !important; }
+
+  /* show when checked */
+  .nav-check:checked ~ .navlinks{
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+
+    position: absolute;
+    right: 22px;
+    top: 64px;
+
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    width: min(92vw, 420px);
+    z-index: 10001;
+  }
+
+  .navlinks a{ width: 100%; }
+
+  /* keep hamburger visible */
+  .nav-toggle{ display: inline-flex !important; }
+
+  /* prevent any hero overlays from stealing clicks */
+  .hero-intro-bg::before{ pointer-events: none !important; }
+}
+
+/* Animate hamburger to X when open (optional, safe) */
+@media (max-width: 980px){
+  .nav-check:checked + .nav-toggle .nav-toggle-bar:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+  .nav-check:checked + .nav-toggle .nav-toggle-bar:nth-child(2){ opacity: 0; }
+  .nav-check:checked + .nav-toggle .nav-toggle-bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+  .nav-toggle .nav-toggle-bar{ transition: transform .18s ease, opacity .18s ease; }
+}
+
+
+/* ================================
+   Nav polish (v191): remove Home link, accentuate logo
+   ================================ */
+.site-header .brand img.brand-wordmark{
+  height: 48px; /* up from ~40px */
+}
+
+@media (min-width: 981px){
+  .site-header .brand img.brand-wordmark{
+    height: 52px;
+  }
+}
+
+
+/* ================================
+   Brand emphasis (v192): make logo clearly larger and more dominant
+   ================================ */
+
+/* Increase header vertical space slightly */
+.site-header .nav{
+  padding: 20px 0;
+}
+
+/* Scale logo up meaningfully */
+.site-header .brand img.brand-wordmark{
+  height: 60px !important;
+}
+
+/* Slightly dial back on small screens so it doesn't crowd */
+@media (max-width: 980px){
+  .site-header .brand img.brand-wordmark{
+    height: 52px !important;
+  }
+}
+
+
+/* ================================
+   Header contrast (v193): keep the navy bar, make the logo pop
+   ================================ */
+
+/* Give the brand mark its own subtle "glass" chip so it doesn't wash out */
+.site-header .brand{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+/* Add a soft glow/shadow to increase separation on dark background */
+.site-header .brand img.brand-wordmark{
+  filter:
+    drop-shadow(0 2px 10px rgba(0,0,0,0.40))
+    drop-shadow(0 0 1px rgba(255,255,255,0.20));
+}
+
+/* Slightly lighten the header background without changing the overall aesthetic */
+.site-header{
+  background: rgba(8,15,25,0.92) !important;
+}
+
+
+/* ================================
+   Layout spacing (v194): reduce gap between header and hero
+   ================================ */
+
+/* Reduce bottom padding on sticky header */
+.site-header{
+  padding-bottom: 0;
+}
+
+/* Pull hero section closer to header */
+.hero{
+  padding-top: var(--space-5); /* down from space-7 */
+}
+
+/* For pages with tighter hero variants */
+.hero-tight{
+  padding-top: var(--space-4);
+}
+
+
+/* ================================
+   Our Team spacing (v195): reduce gap between title and profiles
+   ================================ */
+
+/* Target Our Team page specifically */
+body:has(.team-grid) .hero{
+  padding-bottom: var(--space-3);
+}
+
+/* Reduce margin below the "Our Team" heading */
+body:has(.team-grid) .hero h1{
+  margin-bottom: var(--space-3);
+}
+
+/* Pull team grid upward */
+body:has(.team-grid) .team-grid{
+  margin-top: 0;
+}
+
+
+/* ================================
+   Our Team spacing (v196): aggressively tighten title-to-grid gap
+   ================================ */
+
+/* Shrink hero bottom padding further */
+body:has(.team-grid) .hero{
+  padding-bottom: var(--space-2);
+}
+
+/* Pull heading much closer to content */
+body:has(.team-grid) .hero h1{
+  margin-bottom: var(--space-2);
+}
+
+/* Hard pull grid upward */
+body:has(.team-grid) .team-grid{
+  margin-top: -12px;
+}
+
+
+/* ================================
+   Our Team spacing (v197): match header-to-hero spacing used elsewhere
+   ================================ */
+
+/* Treat Our Team like a standard hero top spacing */
+body:has(.team-grid) .hero{
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-2);
+}
+
+/* Eliminate extra heading margin so grid starts immediately after */
+body:has(.team-grid) .hero h1{
+  margin-bottom: var(--space-1);
+}
+
+/* Remove any residual gap above grid */
+body:has(.team-grid) .team-grid{
+  margin-top: 0;
+}
+
+
+/* ================================
+   Our Team spacing (v198): minimal header-to-grid spacing
+   ================================ */
+
+/* Remove hero padding almost entirely */
+body:has(.team-grid) .hero{
+  padding-top: var(--space-3);
+  padding-bottom: 0;
+}
+
+/* Collapse heading spacing */
+body:has(.team-grid) .hero h1{
+  margin-bottom: 8px;
+}
+
+/* Pull grid directly under heading */
+body:has(.team-grid) .team-grid{
+  margin-top: 0;
+}
+
+
+/* ================================
+   Nav (v201): click-anywhere close via backdrop LABEL (no JS)
+   ================================ */
+.nav-backdrop{
+  display:none;
+}
+
+@media (max-width: 980px){
+  .nav-backdrop{
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: transparent;
+    cursor: default;
+  }
+
+  /* Show backdrop when menu open */
+  .nav-check:checked ~ .nav-backdrop{
+    display:block;
+  }
+
+  /* Ensure menu sits above backdrop */
+  .nav-check:checked ~ .navlinks{
+    z-index: 9999;
+  }
+}
+
+
+/* ================================
+   Nav (v202): click-anywhere close, guaranteed
+   ================================ */
+.nav-backdrop{ display:none; }
+
+@media (max-width: 980px){
+  .nav-backdrop{
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: transparent;
+  }
+  .nav-check:checked ~ .nav-backdrop{
+    display:block;
+  }
+  /* menu above backdrop */
+  .nav-check:checked ~ .navlinks{
+    z-index: 9999;
+  }
+}
+
+
+/* ================================
+   Nav (v203): ensure dropdown sits above the runtime overlay
+   ================================ */
+@media (max-width: 980px){
+  .nav-check:checked ~ .navlinks{
+    z-index: 9999 !important;
+  }
+}
+
+
+/* ================================
+   Nav (v204): ensure overlay never blocks hamburger
+   ================================ */
+#cw-nav-overlay{
+  pointer-events: auto;
+}
+@media (max-width: 980px){
+  .nav-toggle{ position: relative; z-index: 10000; }
+  .nav-check:checked ~ .navlinks{ z-index: 10001 !important; }
+}
+
+
+/* ================================
+   Nav (v205): restore dropdown visibility + reliable positioning
+   ================================ */
+@media (max-width: 980px){
+  /* Ensure the menu can actually be shown */
+  .navlinks{ display:none !important; }
+
+  .nav-check:checked ~ .navlinks{
+    display:flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 88px !important;
+    right: 16px !important;
+    left: auto !important;
+    width: min(92vw, 420px) !important;
+    background: var(--bg) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 16px !important;
+    padding: 10px !important;
+    box-shadow: var(--shadow) !important;
+    z-index: 10001 !important;
+  }
+
+  .site-header{ z-index: 10000 !important; }
+  .nav-toggle{ position: relative; z-index: 10002 !important; }
+}
+
+
+/* ================================
+   Nav (v206): overlay to close menu on first outside click
+   ================================ */
+#cw-nav-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 10000; /* below menu (10001) but above page */
+  background: transparent;
+}
+@media (max-width: 980px){
+  .nav-check:checked ~ .navlinks{
+    z-index: 10001 !important;
+  }
+  .nav-toggle{ z-index: 10002 !important; }
+}
+
+
+/* ================================
+   Nav (v207): ensure overlay is actually on top of the page so one click closes the menu
+   ================================ */
+#cw-nav-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000; /* extremely high, but below menu */
+  background: transparent;
+  pointer-events: auto;
+}
+
+@media (max-width: 980px){
+  .nav-check:checked ~ .navlinks{
+    z-index: 2147483001 !important;
+  }
+  .site-header{ z-index: 2147483002 !important; }
+  .nav-toggle{ z-index: 2147483003 !important; }
+}
