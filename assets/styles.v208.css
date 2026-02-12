@@ -3288,16 +3288,6 @@ img[src*="assets/headshots/julia-blosil.jpg"]{ object-position: center 2% !impor
   font-weight: 500 !important; /* reduce from bold to medium */
 }
 
-/* Header color reset (v210b): shift contrast through the full top bar only */
-.site-header{
-  background: linear-gradient(
-    180deg,
-    rgba(3,10,18,0.98) 0%,
-    rgba(5,14,24,0.98) 100%
-  ) !important;
-  border-bottom: 1px solid rgba(255,255,255,0.12) !important;
-}
-
 /* Technology Leaders: prevent "Our Process" text collisions on small screens */
 @media (max-width: 760px){
   .tl-process-grid .process-step-header{
@@ -3353,4 +3343,18 @@ body.tight-hero-plus .columns4 .stepnum{
     min-width: 2.2rem;
     font-size: 1.2rem !important;
   }
+}
+
+/* Final header baseline: sleek, uniform, site-matching top bar across all pages */
+.site-header{
+  background: var(--bg) !important;
+  background-color: var(--bg) !important;
+  border-bottom: 1px solid var(--line) !important;
+  backdrop-filter: none !important;
+}
+
+.site-header .nav,
+.site-header .navlinks,
+#site-nav{
+  background: transparent !important;
 }
