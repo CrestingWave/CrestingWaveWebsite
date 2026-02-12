@@ -3088,3 +3088,189 @@ body:has(.team-grid) .team-grid{
 .home-split-bleed .grid .card.reveal:not(.home-split-card):hover{
   border-color: rgba(255,255,255,0.28) !important;
 }
+
+
+
+
+
+
+
+/* Extra lift for the most top-cropped portraits */
+.headshot-cropfix-mid{ object-position: center 3% !important; }
+.headshot-cropfix-top{ object-position: center 0% !important; }
+
+
+img[src*="assets/headshots/grace.webp"]{ object-position: center 3% !important; }
+img[src*="assets/headshots/keelin.webp"]{ object-position: center 3% !important; }
+img[src*="assets/headshots/kennedy.webp"]{ object-position: center 3% !important; }
+img[src*="assets/headshots/ava.webp"]{ object-position: center 3% !important; }
+img[src*="assets/headshots/julia-blosil.jpg"]{ object-position: center 2% !important; }
+
+
+/* Headshot fix: prevent top cropping on specific portraits by using contain + top bias */
+.person-card img.headshot-cropfix-mid,
+.person-card img.headshot-cropfix-top{
+  object-fit: contain !important;
+  object-position: center top !important;
+  background: #0b0b0b;
+}
+.person-card img.headshot-cropfix-top{
+  object-position: center 0% !important;
+}
+.person-card img.headshot-cropfix-mid{
+  object-position: center 2% !important;
+}
+
+
+
+
+/* Team headshots: prevent top-of-head clipping for specific portraits (Megan, Grace, Keelin, Kennedy, Ava) */
+.team-card img.headshot-nocrop{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center top !important;
+  display: block !important;
+  background: rgba(255,255,255,0.06) !important;
+}
+
+
+
+
+
+/* Top bar redesign v2: remove logo box, clean dark background, strong contrast */
+.site-header{
+  background: linear-gradient(180deg,
+    rgba(7,18,30,0.98) 0%,
+    rgba(9,28,44,0.98) 100%) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* Remove any box styling around logo */
+.site-header .brand,
+.site-header .brand-wordmark{
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Keep original logo color — no inversion */
+.site-header .brand-wordmark{
+  filter: none !important;
+}
+
+/* Nav link contrast tuned to site palette */
+.site-header .navlinks a{
+  color: rgba(255,255,255,0.82) !important;
+}
+
+.site-header .navlinks a:hover{
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+  color: rgba(255,255,255,0.95) !important;
+}
+
+/* Hamburger button cleaned */
+.site-header .nav-toggle{
+  background: rgba(255,255,255,0.04) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+  box-shadow: none !important;
+}
+
+.site-header .nav-toggle-bar{
+  background: rgba(255,255,255,0.85) !important;
+}
+
+/* Mobile dropdown aligned to header */
+.site-header .nav-check:checked ~ .navlinks{
+  background: rgba(9,28,44,0.98) !important;
+  border-color: rgba(255,255,255,0.10) !important;
+}
+
+.site-header .nav-check:checked ~ .navlinks a{
+  color: rgba(255,255,255,0.90) !important;
+}
+
+
+
+.team-hero h1,
+.team-hero h2{
+  margin-top: 0 !important;
+  margin-bottom: 0.75em !important;
+}
+
+.team-hero{
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+
+
+.hero{
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+
+
+.team-page .hero h1{
+  margin: 0 !important; /* remove extra space below title */
+}
+
+/* Reduce the gap between hero and the team grid section */
+.team-page .hero h1{
+  margin-bottom: 0 !important;
+}
+
+/* This is the actual fix: remove excess top padding from the section with headshots */
+.tight-hero.team-page .hero h1{
+  margin: 0 !important;
+}
+
+/* Match default section spacing like other pages */
+.tight-hero.tight-hero.team-page .hero h1{
+  margin: 0 !important;
+}
+
+.tight-hero
+
+/* HARD RESET — Remove extra vertical space around 'Our Team' */
+.team-page .hero{
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.team-page .hero h1{
+  margin: 0 !important;
+  line-height: 1.1 !important;
+}
+
+.team-page .hero + .section{
+  padding-top: 1rem !important;
+}
+
+
+
+/* Our Team: move headshots directly under title */
+.team-page .hero{
+  padding-bottom: 0.75rem !important;
+}
+
+.team-page .section{
+  padding-top: 0 !important;
+}
+
+.team-page .team-grid{
+  margin-top: 0 !important;
+}
+
+
+/* Global section heading weight adjustment (not nav/logo) */
+.hero h1,
+.section h1,
+.section h2,
+.section h3 {
+  font-weight: 500 !important; /* reduce from bold to medium */
+}
+
