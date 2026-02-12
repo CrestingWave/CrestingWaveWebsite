@@ -1439,6 +1439,20 @@ body.tight-hero .hero + .section{
   color: rgba(255,255,255,0.82) !important;
 }
 
+/* Improve readability on Technology Leaders hero image without losing depth */
+.tech-hero-intro::before{
+  background: linear-gradient(
+    180deg,
+    rgba(8,15,25,0.42) 0%,
+    rgba(8,15,25,0.60) 55%,
+    rgba(8,15,25,0.76) 100%
+  );
+}
+.tech-hero-intro .hero-body-match{
+  color: rgba(255,255,255,0.93) !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.45);
+}
+
 
 /* v94 Emerging Technologies hero intro bg (matches home hero intro block pattern) */
 .emerging-hero-intro{
@@ -3274,3 +3288,69 @@ img[src*="assets/headshots/julia-blosil.jpg"]{ object-position: center 2% !impor
   font-weight: 500 !important; /* reduce from bold to medium */
 }
 
+/* Header color reset (v210b): shift contrast through the full top bar only */
+.site-header{
+  background: linear-gradient(
+    180deg,
+    rgba(3,10,18,0.98) 0%,
+    rgba(5,14,24,0.98) 100%
+  ) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+}
+
+/* Technology Leaders: prevent "Our Process" text collisions on small screens */
+@media (max-width: 760px){
+  .tl-process-grid .process-step-header{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tl-process-grid .process-step-header strong{
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  .tl-process-grid .process-step-header .stepnum{
+    font-size: 1.6rem;
+    min-width: 1.8rem;
+  }
+
+  .tl-process-grid .process-card p{
+    margin-left: 0;
+    margin-top: 10px !important;
+  }
+}
+
+/* Technology Leaders: let each process card grow with its content (like Emerging Tech) */
+.tl-process-grid .process-card{
+  height: auto !important;
+  min-height: 0;
+  overflow: visible !important;
+}
+
+.tl-process-grid .process-step-header strong{
+  white-space: normal;
+}
+
+/* Process badges: keep 1-4 centered inside their boxes on Technology Leaders + Emerging */
+body.tight-hero-plus .columns3 .stepnum,
+body.tight-hero-plus .columns4 .stepnum{
+  width: 2.4rem;
+  height: 2.4rem;
+  min-width: 2.4rem;
+  border-radius: 0.65rem;
+  font-size: 1.35rem !important;
+  line-height: 1;
+  margin-right: 10px;
+}
+
+@media (max-width: 640px){
+  body.tight-hero-plus .columns3 .stepnum,
+  body.tight-hero-plus .columns4 .stepnum{
+    width: 2.2rem;
+    height: 2.2rem;
+    min-width: 2.2rem;
+    font-size: 1.2rem !important;
+  }
+}
