@@ -410,6 +410,20 @@ hr.sep{
   text-underline-offset:3px;
 }
 
+.footer-links .footer-linkedin{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0;
+}
+
+.footer-links .footer-linkedin img{
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+}
+
 .footer-meta{margin-top: 14px}
 
 input, textarea{font: inherit}
@@ -3467,3 +3481,113 @@ body.tight-hero-plus .columns4 .stepnum{
   padding-top: 8px !important;
 }
 
+/* Mobile polish v2: consistent phone layout across all pages */
+@media (max-width: 760px){
+  html, body{
+    font-size: 17px !important;
+  }
+
+  .container{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-header .nav{
+    padding: 12px 0 !important;
+  }
+
+  .site-header .brand img.brand-wordmark{
+    height: 40px !important;
+  }
+
+  .hero{
+    padding-top: 24px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .hero-intro-bg{
+    padding: 28px 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .hero h1{
+    font-size: clamp(1.7rem, 6.8vw, 2.15rem) !important;
+    line-height: 1.2;
+    max-width: 100%;
+  }
+
+  .section{
+    padding: 22px 0 !important;
+  }
+
+  .section h2,
+  .card h2{
+    font-size: 1.3rem !important;
+    line-height: 1.25;
+  }
+
+  .grid,
+  .columns3,
+  .columns4{
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .card,
+  .process-card,
+  .person-card,
+  .focus-card,
+  .home-split-card{
+    padding: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .home-split-card{
+    min-height: 0 !important;
+  }
+
+  .process-row{
+    row-gap: 6px;
+    column-gap: 6px;
+  }
+
+  .btn{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .card-footer{
+    gap: 10px !important;
+  }
+
+  .site-footer{
+    padding: 24px 0 !important;
+  }
+
+  .footer-row{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer-links{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .footer-links a{
+    padding: 6px 0;
+  }
+
+  p, h1, h2, h3, a, span, small{
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 420px){
+  .footer-links{
+    grid-template-columns: 1fr;
+  }
+}
