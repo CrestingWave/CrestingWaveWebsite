@@ -3,9 +3,9 @@
     <g>
         <defs>
             <linearGradient gradientUnits="userSpaceOnUse" gradientTransform="matrix(53.64 0 0 56.3 23589.33 -5618.69)" y2="101.07" x2="-438.86" y1="99.81" x1="-438.86" id="8cfef1c2-534e-4c3e-a1d4-6b2a4ce3f0a6">
-                <stop stop-color="#0f384c" offset="0"/>
-                <stop stop-color="#113e52" offset="0"/>
-                <stop stop-color="#28899d" offset=".49"/>
+                <stop stop-color="#1c6f86" offset="0"/>
+                <stop stop-color="#23829c" offset="0"/>
+                <stop stop-color="#39b2cf" offset=".49"/>
                 <stop stop-color="#b5b682" offset="1"/>
             </linearGradient>
             <linearGradient xlink:href="#8cfef1c2-534e-4c3e-a1d4-6b2a4ce3f0a6" gradientTransform="matrix(12.09 -6.35 1.75 3.32 4661.75 -3169.96)" y2="180.61" x2="-408.19" y1="178.79" x1="-408.19" id="24b15e28-3a38-45ed-bc33-436c39a837ed"/>

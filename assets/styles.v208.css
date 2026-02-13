@@ -1377,6 +1377,18 @@ body.tight-hero .hero + .section{
   color: var(--muted) !important;
 }
 
+.hero-emphasis{
+  margin-top: 12px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.section-emphasis{
+  margin-top: 12px;
+  color: var(--text);
+  font-weight: 700;
+}
+
 
 /* v91 hero intro bg (ONLY the opening header block) */
 .hero-intro-bg{
@@ -3406,6 +3418,11 @@ body.tight-hero-plus .columns4 .stepnum{
   }
 }
 
+/* Home page section headings: match Emerging Technologies header weight */
+.home-hero h2{
+  font-weight: 500 !important;
+}
+
 /* Footer subtitle: allow wrapping on mobile so text doesn't get cut off */
 @media (max-width: 760px){
   .footer-brand,
@@ -3440,3 +3457,13 @@ body.tight-hero-plus .columns4 .stepnum{
   justify-content: center;
   text-align: center;
 }
+
+/* Focus Areas: reduce extra gap between hero block and first section */
+.page-focus .hero{
+  padding-bottom: 10px !important;
+}
+
+.page-focus .hero + .section{
+  padding-top: 8px !important;
+}
+
