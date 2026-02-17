@@ -2861,6 +2861,7 @@ img[src*="assets/headshots/keelin.webp"]{ object-position: center 3% !important;
 img[src*="assets/headshots/kennedy_murphy_png.png"]{ object-position: center 3% !important; }
 img[src*="assets/headshots/ava.webp"]{ object-position: center 3% !important; }
 img[src*="assets/headshots/julia-blosil.jpg"]{ object-position: center 2% !important; }
+img[src*="assets/headshots/AdamHeadshot.jpeg"]{ object-position: center 18% !important; }
 
 
 /* Headshot fix: prevent top cropping on specific portraits by using contain + top bias */
