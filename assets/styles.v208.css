@@ -418,8 +418,8 @@ hr.sep{
 }
 
 .footer-links .footer-linkedin img{
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   display: block;
   object-fit: contain;
 }
@@ -1627,9 +1627,6 @@ a[href^="mailto:"]:hover{
   }
 }
 
-
-
-}
 @media (max-width: 640px){
   .columns4{grid-template-columns: 1fr;}
 }
@@ -1690,9 +1687,6 @@ a[href^="mailto:"]:hover{
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-
 }
 
 
@@ -2419,141 +2413,6 @@ h3 {
 
 
 /* ================================
-   Nav (v188): hamburger dropdown that actually shows and is clickable
-   ================================ */
-.nav-toggle{
-  cursor: pointer;
-}
-
-/* Backdrop catches clicks so menu can sit above everything */
-.nav-backdrop{
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  background: transparent;
-}
-
-/* Mobile dropdown */
-@media (max-width: 980px){
-  .nav-toggle{ display:inline-flex !important; }
-
-  /* Hidden by default */
-  .navlinks{
-    display: none !important;
-  }
-
-  /* When open, show as a real dropdown list */
-  .navlinks.open{
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-
-    position: fixed !important;
-    top: 64px !important;
-    right: 16px !important;
-    left: auto !important;
-
-    width: min(92vw, 420px) !important;
-    background: var(--bg) !important;
-    border: 1px solid var(--line) !important;
-    border-radius: 16px !important;
-    padding: 10px !important;
-
-    z-index: 9999 !important;
-    box-shadow: var(--shadow) !important;
-    pointer-events: auto !important;
-  }
-
-  .navlinks.open a{
-    width: 100%;
-  }
-
-  /* Keep header above hero overlays */
-  .site-header{ z-index: 10000 !important; }
-
-  /* Never let hero overlay intercept clicks */
-  .hero-intro-bg::before{ pointer-events:none !important; }
-}
-
-
-/* ================================
-   Nav restored (v189)
-   Revert to the earlier working hamburger + dropdown behavior.
-   ================================ */
-.nav-toggle{
-  display:none;
-  border:1px solid var(--line);
-  background: var(--bg);
-  border-radius:14px;
-  padding:10px 12px;
-  box-shadow: var(--shadow-soft);
-}
-
-
-.navlinks{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:flex-end;
-}
-
-.navlinks a{
-  padding:9px 12px;
-  border-radius:12px;
-  color:var(--muted);
-  border:1px solid transparent;
-  transition: background .18s ease, border-color .18s ease, transform .18s ease;
-}
-
-.navlinks a:hover{
-  background: var(--bg);
-  border-color: var(--line);
-}
-
-.navlinks a.active{
-  color:var(--text);
-  background: var(--bg);
-  border-color: var(--line);
-}
-
-
-@media (max-width: 980px){
-  .nav-toggle{display:inline-flex}
-  .navlinks{
-    display:none;
-    position:absolute;
-    right:22px;
-    top:64px;
-    background: var(--bg);
-    border:1px solid var(--line);
-    border-radius:16px;
-    padding: 10px;
-    box-shadow: var(--shadow);
-    width: min(92vw, 420px);
-  }
-  .nav{position:relative}
-  .navlinks.open{display:flex; flex-direction:column; align-items:stretch}
-  .navlinks a{width:100%}
-  .columns3{grid-template-columns:1fr}
-  .grid{gap:14px}
-  .logo-grid{grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))}
-}
-
-
-
-/* Ensure nothing later in the stylesheet overrides the open state */
-@media (max-width: 980px){
-  .navlinks.open{
-    display:flex !important;
-  }
-  .navlinks{
-    pointer-events: auto !important;
-  }
-}
-
-
-/* ================================
    Nav (v190): CSS-only hamburger toggle (no JS dependency)
    ================================ */
 .nav-check{
@@ -2779,143 +2638,6 @@ body:has(.team-grid) .team-grid{
 
 
 /* ================================
-   Nav (v201): click-anywhere close via backdrop LABEL (no JS)
-   ================================ */
-.nav-backdrop{
-  display:none;
-}
-
-@media (max-width: 980px){
-  .nav-backdrop{
-    position: fixed;
-    inset: 0;
-    z-index: 9998;
-    background: transparent;
-    cursor: default;
-  }
-
-  /* Show backdrop when menu open */
-  .nav-check:checked ~ .nav-backdrop{
-    display:block;
-  }
-
-  /* Ensure menu sits above backdrop */
-  .nav-check:checked ~ .navlinks{
-    z-index: 9999;
-  }
-}
-
-
-/* ================================
-   Nav (v202): click-anywhere close, guaranteed
-   ================================ */
-.nav-backdrop{ display:none; }
-
-@media (max-width: 980px){
-  .nav-backdrop{
-    position: fixed;
-    inset: 0;
-    z-index: 9998;
-    background: transparent;
-  }
-  .nav-check:checked ~ .nav-backdrop{
-    display:block;
-  }
-  /* menu above backdrop */
-  .nav-check:checked ~ .navlinks{
-    z-index: 9999;
-  }
-}
-
-
-/* ================================
-   Nav (v203): ensure dropdown sits above the runtime overlay
-   ================================ */
-@media (max-width: 980px){
-  .nav-check:checked ~ .navlinks{
-    z-index: 9999 !important;
-  }
-}
-
-
-/* ================================
-   Nav (v204): ensure overlay never blocks hamburger
-   ================================ */
-#cw-nav-overlay{
-  pointer-events: auto;
-}
-@media (max-width: 980px){
-  .nav-toggle{ position: relative; z-index: 10000; }
-  .nav-check:checked ~ .navlinks{ z-index: 10001 !important; }
-}
-
-
-/* ================================
-   Nav (v205): restore dropdown visibility + reliable positioning
-   ================================ */
-@media (max-width: 980px){
-  /* Ensure the menu can actually be shown */
-  .navlinks{ display:none !important; }
-
-  .nav-check:checked ~ .navlinks{
-    display:flex !important;
-    flex-direction: column !important;
-    position: fixed !important;
-    top: 88px !important;
-    right: 16px !important;
-    left: auto !important;
-    width: min(92vw, 420px) !important;
-    background: var(--bg) !important;
-    border: 1px solid var(--line) !important;
-    border-radius: 16px !important;
-    padding: 10px !important;
-    box-shadow: var(--shadow) !important;
-    z-index: 10001 !important;
-  }
-
-  .site-header{ z-index: 10000 !important; }
-  .nav-toggle{ position: relative; z-index: 10002 !important; }
-}
-
-
-/* ================================
-   Nav (v206): overlay to close menu on first outside click
-   ================================ */
-#cw-nav-overlay{
-  position: fixed;
-  inset: 0;
-  z-index: 10000; /* below menu (10001) but above page */
-  background: transparent;
-}
-@media (max-width: 980px){
-  .nav-check:checked ~ .navlinks{
-    z-index: 10001 !important;
-  }
-  .nav-toggle{ z-index: 10002 !important; }
-}
-
-
-/* ================================
-   Nav (v207): ensure overlay is actually on top of the page so one click closes the menu
-   ================================ */
-#cw-nav-overlay{
-  position: fixed;
-  inset: 0;
-  z-index: 2147483000; /* extremely high, but below menu */
-  background: transparent;
-  pointer-events: auto;
-}
-
-@media (max-width: 980px){
-  .nav-check:checked ~ .navlinks{
-    z-index: 2147483001 !important;
-  }
-  .site-header{ z-index: 2147483002 !important; }
-  .nav-toggle{ z-index: 2147483003 !important; }
-}
-
-
-/* ================================
    Nav (v208): authoritative mobile hamburger rules (override all prior conflicting nav CSS)
    ================================ */
 @media (max-width: 980px){
@@ -3054,15 +2776,9 @@ body:has(.team-grid) .team-grid{
   min-height: 2.6em;
 }
 
-/* Keep audience-card tint on hover too */
-.home-split-card
-
 /* Hover fix: preserve gradient backgrounds on homepage split cards */
 .home-split-tl:hover{ background: linear-gradient(135deg, rgba(9,38,56,1) 0%, rgba(12,94,108,1) 55%, rgba(18,140,131,1) 100%) !important; }
 .home-split-et:hover{ background: linear-gradient(135deg, rgba(10,45,70,1) 0%, rgba(10,85,110,1) 55%, rgba(20,160,140,1) 100%) !important; }
-
-/* Hover fix: do not override background on gradient split cards */
-.home-split-card
 
 /* Hover behavior: preserve gradient cards, strengthen default card tint */
 .card:not(.audience-card):hover{
@@ -3273,8 +2989,6 @@ img[src*="assets/headshots/julia-blosil.jpg"]{ object-position: center 2% !impor
   margin: 0 !important;
 }
 
-.tight-hero
-
 /* HARD RESET — Remove extra vertical space around 'Our Team' */
 .team-page .hero{
   padding-top: 1rem !important;
@@ -3383,6 +3097,10 @@ body.tight-hero-plus .columns4 .stepnum{
 .site-header .navlinks,
 #site-nav{
   background: transparent !important;
+}
+
+.site-header .nav-toggle{
+  cursor: pointer;
 }
 
 /* Mobile nav: keep dropdown panel opaque (not blended with page backdrop) */
