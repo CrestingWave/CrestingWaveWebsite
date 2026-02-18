@@ -2862,6 +2862,7 @@ img[src*="assets/headshots/kennedy_murphy_png.png"]{ object-position: center 3% 
 img[src*="assets/headshots/ava.webp"]{ object-position: center 3% !important; }
 img[src*="assets/headshots/julia-blosil.jpg"]{ object-position: center 2% !important; }
 img[src*="assets/headshots/AdamHeadshot.jpeg"]{ object-position: center 18% !important; }
+img[src*="assets/headshots/MeganHeadshot2.jpeg"]{ object-position: center 12% !important; }
 
 
 /* Headshot fix: prevent top cropping on specific portraits by using contain + top bias */
@@ -2882,7 +2883,7 @@ img[src*="assets/headshots/AdamHeadshot.jpeg"]{ object-position: center 18% !imp
 
 
 /* Team headshots: prevent top-of-head clipping for specific portraits (Megan, Grace, Keelin, Kennedy, Ava) */
-.team-card img.headshot-nocrop{
+.person-card img.headshot-nocrop{
   width: 100% !important;
   height: 100% !important;
   object-fit: contain !important;
