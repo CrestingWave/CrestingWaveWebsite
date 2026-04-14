@@ -2892,6 +2892,39 @@ img[src*="assets/headshots/MeganHeadshot2.jpeg"]{ object-position: center 12% !i
   background: rgba(255,255,255,0.06) !important;
 }
 
+/* Our Team: per-person framing fixes */
+.person-card img.headshot-team-kennedy{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 12% !important;
+  display: block !important;
+}
+
+.person-card img.headshot-team-grace{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 10% !important;
+  display: block !important;
+}
+
+.person-card img.headshot-team-keelin{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 8% !important;
+  display: block !important;
+}
+
+.person-card img.headshot-team-ava{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 14% !important;
+  display: block !important;
+}
+
 
 
 
@@ -3039,6 +3072,56 @@ img[src*="assets/headshots/MeganHeadshot2.jpeg"]{ object-position: center 12% !i
   text-overflow: clip !important;
   -webkit-line-clamp: unset !important;
   -webkit-box-orient: initial !important;
+}
+
+/* Our Team: one consistent card size and one consistent headshot frame */
+body.team-page .team-grid{
+  align-items: stretch !important;
+}
+
+body.team-page .person-card{
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  min-height: 470px !important;
+  padding: 16px !important;
+  gap: 14px !important;
+}
+
+body.team-page .person-card img{
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center 10% !important;
+  border-radius: 14px !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  background: rgba(255,255,255,0.04) !important;
+}
+
+body.team-page .person-card .person-body{
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+  min-height: 120px !important;
+  gap: 8px !important;
+  padding: 0 !important;
+}
+
+body.team-page .person-card .bio{
+  margin-top: 10px !important;
+  max-height: 120px !important;
+  overflow: auto !important;
+  scrollbar-width: thin;
+}
+
+body.team-page .person-card img[src*="assets/headshots/keelin.webp"]{
+  object-position: center 6% !important;
+}
+
+body.team-page .person-card img[src*="assets/headshots/Ava2.png"]{
+  object-position: center 12% !important;
 }
 
 
