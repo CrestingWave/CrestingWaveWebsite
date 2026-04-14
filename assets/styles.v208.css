@@ -3021,6 +3021,26 @@ img[src*="assets/headshots/MeganHeadshot2.jpeg"]{ object-position: center 12% !i
   margin-top: 0 !important;
 }
 
+/* Our Team: let names/titles wrap naturally instead of clipping */
+.team-page .person-card .person-body{
+  gap: 6px;
+}
+
+.team-page .person-card .person-name{
+  line-height: 1.25 !important;
+}
+
+.team-page .person-card .person-title{
+  display: block !important;
+  margin-top: 0 !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: initial !important;
+}
+
 
 /* Global section heading weight adjustment (not nav/logo) */
 .hero h1,
