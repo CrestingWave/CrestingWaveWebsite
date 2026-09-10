@@ -178,12 +178,16 @@
 
   if (!trigger || !bubble || !modal || !iframe) return;
 
-  const openVideo = () => {
+  const loadVideo = () => {
     const src = iframe.getAttribute("data-src");
     if (src && !iframe.getAttribute("src")) iframe.setAttribute("src", src);
+  };
+
+  const openVideo = () => {
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("video-modal-open");
+    window.requestAnimationFrame(loadVideo);
   };
 
   const closeVideo = () => {
