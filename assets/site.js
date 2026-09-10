@@ -171,12 +171,10 @@
 
 (() => {
   const trigger = document.querySelector(".home-video-trigger");
-  const bubble = document.querySelector("[data-video-bubble]");
-  const dismiss = document.querySelector(".home-video-dismiss");
   const modal = document.getElementById("home-video-modal");
   const iframe = modal && modal.querySelector("[data-video-iframe]");
 
-  if (!trigger || !bubble || !modal || !iframe) return;
+  if (!trigger || !modal || !iframe) return;
 
   const loadVideo = () => {
     const src = iframe.getAttribute("data-src");
@@ -199,14 +197,6 @@
   };
 
   trigger.addEventListener("click", openVideo);
-
-  if (dismiss) {
-    dismiss.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      bubble.classList.add("is-hidden");
-    });
-  }
 
   modal.addEventListener("click", (e) => {
     if (e.target.closest("[data-video-close]")) closeVideo();
