@@ -102,5 +102,24 @@
 <div class="footer-meta"><small>© 2026 Cresting Wave. All rights reserved.</small></div>
 </div>
 </footer>
+<div class="home-video-bubble" data-video-bubble>
+<button class="home-video-dismiss" type="button" aria-label="Dismiss video prompt">&times;</button>
+<button class="home-video-trigger" type="button" aria-label="Watch Cresting Wave video" aria-haspopup="dialog" aria-controls="home-video-modal">
+<span class="home-video-play" aria-hidden="true"></span>
+<span class="home-video-copy">
+<span class="home-video-label">Watch the overview</span>
+<span class="home-video-text">See Cresting Wave in motion</span>
+</span>
+</button>
+</div>
+<div class="home-video-modal" id="home-video-modal" role="dialog" aria-modal="true" aria-label="Cresting Wave video" aria-hidden="true">
+<div class="home-video-backdrop" data-video-close></div>
+<div class="home-video-panel">
+<button class="home-video-close" type="button" aria-label="Close video" data-video-close>&times;</button>
+<div class="home-video-frame">
+<iframe data-video-iframe data-src="https://www.youtube.com/embed/CuMwApt6Gvs?autoplay=1&rel=0&modestbranding=1" title="Cresting Wave video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
+</div>
 <script src="assets/reveal.js"></script></body>
 </html>

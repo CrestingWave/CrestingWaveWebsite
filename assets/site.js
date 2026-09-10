@@ -168,3 +168,47 @@
     window.gtag("event", getEventName(target), getEventData(target));
   });
 })();
+
+(() => {
+  const trigger = document.querySelector(".home-video-trigger");
+  const bubble = document.querySelector("[data-video-bubble]");
+  const dismiss = document.querySelector(".home-video-dismiss");
+  const modal = document.getElementById("home-video-modal");
+  const iframe = modal && modal.querySelector("[data-video-iframe]");
+
+  if (!trigger || !bubble || !modal || !iframe) return;
+
+  const openVideo = () => {
+    const src = iframe.getAttribute("data-src");
+    if (src && !iframe.getAttribute("src")) iframe.setAttribute("src", src);
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("video-modal-open");
+  };
+
+  const closeVideo = () => {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("video-modal-open");
+    iframe.removeAttribute("src");
+    trigger.focus();
+  };
+
+  trigger.addEventListener("click", openVideo);
+
+  if (dismiss) {
+    dismiss.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      bubble.classList.add("is-hidden");
+    });
+  }
+
+  modal.addEventListener("click", (e) => {
+    if (e.target.closest("[data-video-close]")) closeVideo();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) closeVideo();
+  });
+})();
