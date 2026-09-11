@@ -3611,36 +3611,20 @@ body.tight-hero.tight-hero-plus .quote-ticker-section + .section{
 /* Homepage hero video card */
 .home-hero-intro{
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .8fr);
-  grid-template-areas:
-    "kicker video"
-    "title video"
-    "lede video";
-  align-items: center;
-  column-gap: 36px;
-  row-gap: 12px;
-}
-
-.home-hero-intro .kicker{
-  grid-area: kicker;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+  align-items: start;
 }
 
 .home-hero-intro h1{
-  grid-area: title;
   margin-bottom: 0;
-}
-
-.home-hero-intro .lede{
-  grid-area: lede;
 }
 
 .home-hero-video-card{
   position: relative;
   z-index: 1;
-  grid-area: video;
-  align-self: center;
-  width: min(760px, 100%);
-  margin-top: 0;
+  width: min(820px, 100%);
+  margin-top: 12px;
 }
 
 .home-video-trigger{
@@ -3877,11 +3861,6 @@ body.video-modal-open{
 @media (max-width: 760px){
   .home-hero-intro{
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "kicker"
-      "title"
-      "video"
-      "lede";
     row-gap: 16px;
   }
 
